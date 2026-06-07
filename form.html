@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parque_avellaneda_formulario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="form.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <a class="inicio" href="#">🏠︎</a>
+        <img class="logo" src="img_prueba/parque_avellaneda.png" alt="nombre">
+    </header>
+    <main>
+        <section class="formulario">
+            <h2>¡Queremos conocerte!</h2>
+
+            <form class="form">
+
+                <div class="campos">
+                    <div class="grupo">
+                        <label for="nombre">¿Cómo te llamas?</label>
+                        <input type="text" id="nombre" name="nombre">
+                    </div>
+
+                    <div class="grupo">
+                        <label for="actividad">¿Qué actividad es de tu interés?</label>
+                        <select id="actividad" name="actividad">
+                            <option value="" disabled selected>Seleccioná una opción</option>
+                            <option value="deporte">Deporte</option>
+                            <option value="cultura">Cultura y arte</option>
+                            <option value="naturaleza">Naturaleza y medio ambiente</option>
+                            <option value="educacion">Talleres educativos</option>
+                            <option value="recreacion">Recreación familiar</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo">
+                        <label for="frecuencia">¿Con qué frecuencia visitas el parque?</label>
+                        <select id="frecuencia" name="frecuencia">
+                            <option value="" disabled selected>Seleccioná una opción</option>
+                            <option value="1vez">1 vez a la semana</option>
+                            <option value="2veces">2 veces a la semana</option>
+                            <option value="3veces">3 veces a la semana</option>
+                            <option value="mas3">Más de 3 veces a la semana</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo grupo-edad">
+                        <label>¿Cuál es tu rango de edad?</label>
+                        <div class="edad-opciones">
+                            <label class="edad-bullet">
+                                <input type="radio" name="edad" value="0-10">
+                                <span>0 – 10</span>
+                            </label>
+                            <label class="edad-bullet">
+                                <input type="radio" name="edad" value="11-16">
+                                <span>11 – 16</span>
+                            </label>
+                            <label class="edad-bullet">
+                                <input type="radio" name="edad" value="17-23">
+                                <span>17 – 23</span>
+                            </label>
+                            <label class="edad-bullet">
+                                <input type="radio" name="edad" value="24-29">
+                                <span>24 – 29</span>
+                            </label>
+                            <label class="edad-bullet">
+                                <input type="radio" name="edad" value="30+">
+                                <span>30 +</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comentario">
+                    <label for="mensaje">¡Déjanos tu comentario!</label>
+                    <textarea id="mensaje" name="mensaje"></textarea>
+                </div>
+            </form>
+
+            <button class="btn-enviar">Enviar</button>
+        </section>
+
+    </main>
+    <footer>
+        <h5>Humboldt - CABA - Cel: 15-4170-8400 - email: codavis@parqueavellanedaweb.com.ar</h5>
+    </footer>
+</body>
+
+</html>
