@@ -367,16 +367,16 @@ text-align: center;
 
 
 .cuadro-fecha {
-    border-radius: 40px 40px 0px 40px; /* Esquina inferior derecha recta */
+    border-radius: 40px 40px 0px 40px; 
 }
 
 .cuadro-cronograma {
-    border-radius: 40px 40px 40px 0px; /* Esquina inferior izquierda recta */
+    border-radius: 40px 40px 40px 0px; 
 }
 
-/* 4. El encabezado verde oliva de los títulos */
+
 .proxima-fecha{
-    background-color: #556037; /* El verde oliva oscuro de tu Figma */
+    background-color: #556037; 
     padding: 15px 20px;
 }
 
@@ -384,20 +384,20 @@ text-align: center;
     color: #ffffff;
     margin: 0;
     font-size: 1.2rem;
-    letter-spacing: 1px; /* Para separar un poco las letras como tu tipografía */
+    letter-spacing: 1px; 
 }
 
-/* 5. El espacio interno del contenido */
+
 .cuadro-informacion{
     padding: 25px;
 }
 
-/* 6. Para la imagen de la primera tarjeta */
+
 .img_gente{
     width: 100%;
     height: auto;
     margin-top: 20px;
-    border-radius: 0 0 0 20px; /* Si querés que la imagen acompañe la curva de la tarjeta */
+    border-radius: 0 0 0 20px; 
 }
 
 /* ═══════════════════════════════════════════════
