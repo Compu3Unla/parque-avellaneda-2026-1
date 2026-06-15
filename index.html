@@ -64,22 +64,24 @@
       </ul>
     </nav>
 
-    <div class="header-search" id="header-search">
-      <input class="header-search-input" type="search" placeholder="Buscar..." aria-label="Buscar" />
-      <button class="header-search-close" onclick="toggleSearch()" aria-label="Cerrar búsqueda">
+    <div class="header-search-wrap">
+      <button class="header-search-btn" onclick="toggleSearch()" aria-label="Buscar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
         </svg>
       </button>
-    </div>
 
-    <button class="header-search-btn" onclick="toggleSearch()" aria-label="Buscar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="11" cy="11" r="8" />
-        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-      </svg>
-    </button>
+      <div class="header-search" id="header-search">
+        <input class="header-search-input" type="search" placeholder="Buscar..." aria-label="Buscar" />
+        <button class="header-search-close" onclick="toggleSearch()" aria-label="Cerrar búsqueda">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
 
     <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" onclick="toggleNav(this)">
       <span></span>
@@ -160,7 +162,7 @@
                 </svg></span>
               <span class="card-label">El Playón</span>
             </a>
-            <a href="fogon.html" class="card-item" aria-label="El Fogón">
+            <a href="#" class="card-item" aria-label="El Fogón">
               <span class="card-icon" aria-hidden="true"><svg id="Capa_1" data-name="Capa 1"
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 346.51 202.51">
                   <path
@@ -311,7 +313,7 @@
       const search = document.getElementById('header-search');
       const input = search.querySelector('.header-search-input');
       const isOpen = search.classList.toggle('open');
-      if (isOpen) { setTimeout(() => input.focus(), 320); }
+      if (isOpen) { setTimeout(() => input.focus(), 200); }
       else { input.value = ''; }
     }
 
