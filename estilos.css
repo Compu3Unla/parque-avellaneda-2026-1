@@ -311,11 +311,11 @@ body {
   body {
    
     background-image: url("img/editadas/fondo.png"); 
-    background-position: center top;
+  background-size: cover;         
+    background-position: center;    
     background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-color: #e2e4cf; 
-    margin: 0;
+    background-attachment: scroll;  
+    min-height: 100vh;             
 }
 
 .fogata{
@@ -421,7 +421,7 @@ h3, span, p{
   font-family: 'Archivo', sans-serif; 
 }
 /* ═══════════════════════════════════════════════
-   CARRUSEL
+   CARRUSEL PARA EL FOGON
    ═══════════════════════════════════════════════ */
    
 .seccion-carrusel {
@@ -753,4 +753,16 @@ h3, span, p{
 @media (max-width: 860px) {
   .header-search.open { max-width: 180px; }
   .header-search-input { width: 140px; }
+
+  
+  /* esto es para los cuadros de informacion del fogon */
+  .contenedor-cuadros {
+        flex-direction: column; 
+        grid-template-columns: 1fr;
+        gap: 20px; 
+    }
+    .cuadro-fecha, 
+    .cuadro-cronograma {
+        width: 100%;
+    }
 }
