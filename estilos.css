@@ -166,11 +166,6 @@ body {
   overflow: hidden;
 }
 
-/* ── INTRO: logo grande centrado, resto oculto ──
-   Estado inicial (arriba del todo). A medida que
-   se hace scroll dentro de los primeros 60vh,
-   estos elementos van apareciendo / acomodándose
-   hasta llegar al layout normal del hero.        */
 .hero-eyebrow,
 .hero-tagline,
 .hero-bottom {
@@ -334,6 +329,7 @@ body {
   text-decoration: none;
   transition: width 0.3s ease, filter 0.2s;
   cursor: pointer;
+  border-radius: 0 24px 24px 24px;
 }
 
 .card-item:nth-child(1) {
@@ -405,6 +401,31 @@ body {
   line-height: 1.7;
   color: #3a3a2a;
 }
+/* ═══════════════════════════════════════════════
+   VIDEO
+   ═══════════════════════════════════════════════ */
+
+.seccion-video {
+  background-image: url('img/maxresdefault.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+  width: 100%;
+  
+  /* Flexbox para centrar el video directamente */
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilos directos sobre el reproductor */
+.seccion-video video {
+  width: 100%;
+  max-width: 800px; /* Tamaño máximo del video */
+  height: auto;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+  border-radius: 8px;
+}
 
 
 /* ═══════════════════════════════════════════════
@@ -423,24 +444,42 @@ body {
 
 .fogata {
   display: block;
-  min-height: 70vh;
+}
+
+/* ── Hero con imagen de fondo ── */
+.fogata-hero {
+  background-image: url("img/fogon_2.png");
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+}
+
+.fogata-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(82, 99, 50, 0.55);
+}
+
+.fogata-hero > * {
+  position: relative;
 }
 
 .texto_fogon {
-  color: #3a3a2a;
+  color: #f5f5e8;
   font-family: 'Gulax', sans-serif;
   font-size: 3rem;
   text-align: center;
 }
 
 .bajada {
-  color: #3a3a2a;
+  color: #f5f5e8;
   font-family: 'Caliban', sans-serif;
   text-align: center;
 }
 
 .logo-fogon {
-  fill: #3a3a2a;
+  fill: #f5f5e8;
   width: 100px;
   height: auto;
   display: block;
@@ -452,27 +491,28 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 60px 0;
-  min-height: 50vh;
+  padding: 60px 0 40px;
 }
 
-h4 {
-  color: #ddd9cc;
+.fogata-cita {
+  color: #3a3a2a;
   font-family: 'Caliban', sans-serif;
+  font-style: italic;
   text-align: center;
-  font-size: 1rem;
-  padding: 20px;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
 }
-
-
 
 .contenedor-cuadros {
   display: flex;
   justify-content: center;
   gap: 40px;
   max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
+  margin: 0 auto 0;
+  padding: 0 20px 60px;
 }
 
 .cuadro-fecha,
@@ -512,9 +552,10 @@ h4 {
 }
 
 .img_gente {
-
   margin-top: 20px;
   border-radius: 20px;
+  width: 100%;
+  height: auto;
 }
 
 p {
@@ -528,48 +569,26 @@ p {
 }
 
 /* ═══════════════════════════════════════════════
-   CARRUSEL
+   GALERÍA FOGATA
    ═══════════════════════════════════════════════ */
 
-.seccion-carrusel {
+.galeria-fogata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   max-width: 1200px;
   margin: 60px auto;
-  padding: 0 20px;
-  position: relative;
+  padding: 0 20px 60px;
 }
 
-.carrusel-contenedor {
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-
-.carrusel-track {
-  display: flex;
-  gap: 20px;
-  width: 100%;
-  scroll-behavior: smooth;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-
-.carrusel-track::-webkit-scrollbar {
-  display: none;
-}
-
-
-.carrusel-tarjeta {
-  min-width: calc(33.333% - 14px);
-  flex-shrink: 0;
-  scroll-snap-align: start;
-}
-
-.carrusel-tarjeta img {
+.galeria-fogata img {
+  flex: 1 1 calc(33.333% - 6px);
+  min-width: 260px;
+  max-width: calc(33.333% - 6px);
+  height: 260px;
   object-fit: cover;
   display: block;
+  border-radius: 8px;
 }
 
 
@@ -595,7 +614,6 @@ p {
 }
 
 /* Col 1 — Logo + datos */
-.footer-brand {}
 
 /* Logo en footer: negro */
 .footer-logo {
@@ -645,7 +663,7 @@ p {
 }
 
 /* Col 2 — Links + redes */
-.footer-links {}
+
 
 .footer-nav {
   list-style: none;
@@ -974,7 +992,9 @@ p {
   }
 
   
-/*esto para la informacion de la seccion de fogata*/
+/* ═══════════════════════════════════════════════
+   FOGATA
+   ═══════════════════════════════════════════════ */
 
   .contenedor-cuadros {
     flex-direction: column;
@@ -995,4 +1015,560 @@ p {
   .carrusel-tarjeta {
     min-width: 100%;
   }
+}
+
+/* ── Variables extra de historia ─────────────── */
+:root {
+  --verde-pleno:  #D2D5BC;
+  --verde-banda:  #525F2A;
+  --dorado:       #9C9C48;
+  --font-subtitulo: 'Caliban', serif;
+}
+ 
+/* ── HERO DE HISTORIA ────────────────────────── */
+.historia-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--crema);
+  padding-top: 64px; /* compensar header fijo */
+  overflow: hidden;
+}
+ 
+.historia-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('img/fondo historia.svg') center center / cover no-repeat;
+  filter: sepia(0.35) brightness(0.88);
+  opacity: 0.8;
+  z-index: 0;
+}
+ 
+.historia-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 240, 224, 0.15) 0%,
+    rgba(245, 240, 224, 0.40) 100%
+  );
+}
+ 
+.historia-hero-body {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 40px;
+  text-align: center;
+}
+ 
+.historia-hero-icon {
+  width: 359px;
+  height: 79px;
+  max-width: 40vw;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  display: block;
+}
+ 
+/* Título igual en tamaño a .texto_fogon de fogata */
+.historia-titulo {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--verde-oscuro);
+  line-height: 1.1;
+  text-align: center;
+}
+ 
+.historia-subtitulo {
+  font-family: var(--font-subtitulo);
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-style: italic;
+  color: var(--verde-oscuro);
+  margin-top: 8px;
+  letter-spacing: 0.02em;
+  width: 320px;
+  max-width: 90vw;
+  text-align: center;
+}
+ 
+/* ── Card "Nuestro pasado" ─────────────────── */
+.historia-card-pasado {
+  position: relative;
+  z-index: 10;
+  margin-top: auto;
+  margin-right: 100px;
+  margin-bottom: 60px;
+  margin-left: auto;
+  width: 833px;
+  max-width: 90%;
+  height: 401px;
+  align-self: flex-end;
+  background: var(--verde-pleno);
+  border-radius: 32px 32px 32px 0;
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.historia-card-pasado h2 {
+  font-family: var(--font-subtitulo);
+  font-size: clamp(22px, 3vw, 34px);
+  font-style: italic;
+  color: var(--verde-oscuro);
+  margin-bottom: 20px;
+  text-align: center;
+}
+ 
+.historia-card-pasado p {
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.7;
+  color: #1e2a16;
+}
+ 
+/* ── SECCIÓN FAMILIA OLIVERA ─────────────────── */
+.seccion-flia {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 60px;
+}
+ 
+.columna {
+  flex: 1;
+  min-width: 320px;
+  padding: 60px;
+  position: relative;
+}
+ 
+.titulo-banda {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.5vw, 60px);
+  color: var(--crema);
+  background-color: var(--verde-banda);
+  display: block;
+  width: 100%;
+  padding: 16px 40px;
+  border-radius: 0 32px 32px 32px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+ 
+.titulo-banda-derecha {
+  background-color: transparent;
+  color: var(--verde-banda);
+  padding: 16px 0;
+  text-align: left;
+  width: auto;
+  display: inline-block;
+}
+ 
+.texto-principal {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 1.7;
+  color: var(--negro);
+  margin-bottom: 40px;
+}
+ 
+.texto-principal strong { font-weight: 700; }
+ 
+.card-angosta {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 32px 0 32px 32px;
+}
+ 
+/* ── Panel blanco columna derecha ───────────── */
+.panel-blanco {
+  background-color: #FFFFFF;
+  border-radius: 0 227px 0 0;
+  padding: 40px 48px;
+  width: 100%;
+}
+ 
+/* ── Subcolumnas ────────────────────────────── */
+.subcolumnas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 27px;
+}
+ 
+.subcolumna {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+ 
+.subtitulo-flia {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(20px, 2.5vw, 30px);
+  color: var(--dorado);
+  text-transform: uppercase;
+  border: 1px solid var(--dorado);
+  border-radius: 0 24px 24px 24px;
+  display: inline-block;
+  padding: 8px 20px;
+  margin-bottom: 20px;
+}
+ 
+.texto-italic {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(13px, 1.4vw, 16px);
+  color: var(--verde-banda);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+ 
+.img-subcolumna {
+  width: 100%;
+  max-width: 319px;
+  height: auto;
+  aspect-ratio: 319/457;
+  object-fit: cover;
+  display: block;
+  margin-top: auto;
+}
+ 
+/* ── SECCIÓN HIJOS ──────────────────────────── */
+.seccion-hijos {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #FFF 0%, #C7C797 24.52%, #9C9C48 79.81%);
+  overflow: hidden;
+  padding: 60px;
+}
+ 
+.hijos-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 64%;
+  height: 76%;
+  background: url('img/Playon_sinfondo3 1.svg') left bottom / cover no-repeat;
+  opacity: 0.25;
+  z-index: 0;
+}
+ 
+.hijos-grid {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: flex-end;
+  max-width: 60%;
+  margin-left: auto;
+}
+ 
+.hijo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 0 0 calc(33.333% - 28px);
+  min-width: 120px;
+}
+ 
+.titulo-hijo {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 30px);
+  font-weight: 400;
+  color: var(--verde-banda);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  /* override del h4 genérico de fogata */
+  text-align: left;
+  padding: 0;
+  color: var(--verde-banda);
+}
+ 
+.img-hijo {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+ 
+.img-hijo-tall {
+  max-width: 156px;
+  aspect-ratio: 39/50;
+}
+ 
+/* ── RESPONSIVE HISTORIA ───────────────────── */
+@media (max-width: 900px) {
+  .historia-card-pasado {
+    width: 90%;
+    height: auto;
+    margin-right: 16px;
+    margin-left: 16px;
+    align-self: center;
+  }
+ 
+  .historia-hero-icon {
+    width: 200px;
+    height: 52px;
+    max-width: 50vw;
+  }
+ 
+  .historia-titulo {
+    font-size: 2.2rem;
+  }
+ 
+  .columna { padding: 32px; }
+  .seccion-flia { flex-direction: column; }
+  .panel-blanco { border-radius: 0 80px 0 0; padding: 24px; }
+  .subcolumnas { flex-direction: column; gap: 16px; }
+ 
+  .hijos-grid {
+    max-width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+  .hijos-bg { width: 100%; height: 50%; opacity: 0.15; }
+  .hijo-item { flex: 0 0 calc(50% - 20px); }
+}
+ 
+@media (max-width: 600px) {
+  .seccion-hijos { padding: 32px 24px; }
+  .titulo-banda { font-size: 32px; padding: 12px 20px; }
+  .hijo-item { flex: 0 0 100%; }
+}
+/* ═══════════════════════════════════════════════
+   INTEGRACIÓN: SECCIÓN FORMULARIO (Agregado)
+   ═══════════════════════════════════════════════ */
+
+/* Reemplazo de estilos globales de body */
+.pag-formulario {
+    position: relative;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 500;
+    min-height: 100vh;
+    background-image: url('img/parque_avellaneda_1200_gente.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Overlay verde que unifica con la paleta del sitio */
+.pag-formulario::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(160deg,
+        rgba(40, 70, 20, 0.72) 0%,
+        rgba(100, 110, 50, 0.78) 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Todo el contenido por encima del overlay */
+.pag-formulario > * {
+    position: relative;
+    z-index: 1;
+}
+
+.pag-formulario .inicio {
+    color: #0d3b1e;
+}
+
+.pag-formulario .logo {
+    width: 220px;
+    height: auto;
+    display: block;
+    margin: 0px auto;
+}
+
+.pag-formulario .formulario {
+    padding: 20px 60px 60px;
+    color: #f5f5dc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pag-formulario .formulario h2 {
+    font-family: 'Gulax', sans-serif;
+    color: #ececd7;
+    font-size: 2.5rem;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    text-align: center;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+}
+
+.pag-formulario .form {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+}
+
+.pag-formulario .campos {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.pag-formulario .grupo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.pag-formulario .grupo label {
+    color: #ececd7;
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+}
+
+.pag-formulario .grupo input[type="text"],
+.pag-formulario .grupo select {
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ececd7;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+.pag-formulario .grupo select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%230d3b1e' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.pag-formulario .edad-opciones {
+    display: flex;
+    gap: 15px;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.pag-formulario .edad-bullet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.pag-formulario .edad-bullet input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #0d3b1e;
+    border-radius: 50%;
+    outline: none;
+    background-color: #ececd7;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pag-formulario .edad-bullet input[type="radio"]:checked::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #0d3b1e;
+    border-radius: 50%;
+}
+
+.pag-formulario .edad-bullet span {
+    color: #ececd7;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+}
+
+.pag-formulario .comentario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pag-formulario .comentario label {
+    color: #ececd7;
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+}
+
+.pag-formulario .comentario textarea {
+    width: 320px;
+    height: 180px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ececd7;
+    resize: none;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.pag-formulario .btn-enviar {
+    margin-top: 40px;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 25px;
+    background-color: #0d3b1e;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.pag-formulario .btn-enviar:hover {
+    color: #b3b36a;
+}
+
+/* ── RESPONSIVE FORMULARIO ─────────────────── */
+@media (max-width: 600px) {
+    .pag-formulario .form {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .pag-formulario .grupo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .pag-formulario .grupo input[type="text"],
+    .pag-formulario .grupo select,
+    .pag-formulario .edad-opciones {
+        width: 320px;
+    }
 }
