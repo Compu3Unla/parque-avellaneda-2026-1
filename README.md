@@ -15,6 +15,7 @@ Esta página es un re diseño y actualizacion de una página ya existente, donde
 Tecnologías utilizadas
 - HTML5
 - CSS
+  
 - Figma
 - Visual Code
 
@@ -32,3 +33,4 @@ Funcionalidades
 (Index- sección de fogon - sección de historia - formulario)
 - Diseño responsive.
 - Formulario de contacto.
+
